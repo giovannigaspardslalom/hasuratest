@@ -1,0 +1,15 @@
+# tests/graphql/todo.graphql
+  query GetTodos {
+    todo {
+      id
+      task
+      completed
+    }
+  }
+
+mutation AddTodo($task: String = "", $completed: Boolean = false) {
+    insert_todo_one(object: {task: $task, completed: $completed}) {
+    # id
+    task
+  }
+}
